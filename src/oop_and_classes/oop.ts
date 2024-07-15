@@ -13,6 +13,7 @@ interface IUser {
   userNames: string;
   age: number;
   isLogin: boolean;
+  greetting: () => void;
 }
 function User(
   this: IUser,
@@ -23,6 +24,10 @@ function User(
   this.userNames = userNames;
   this.age = age;
   this.isLogin = isLogin;
+  this.greetting = function () {
+    console.log(`constructor functions${this.userNames}`);
+  };
+  // return this
 }
 
 const userOne = new (User as any)("Raushan", 28, true) as IUser;
