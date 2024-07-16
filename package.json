@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "ts-node src/oop_and_classes/prototype"
+    "dev": "ts-node src/oop_and_classes/mathPi"
   },
   "keywords": [],
   "author": "",
