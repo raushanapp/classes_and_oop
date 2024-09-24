@@ -5,7 +5,7 @@
   "main": "myFunction.ts",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
+    "start": "node src/advance_js/call_apply_bind.js",
     "dev": "ts-node src/leran_node/http.example"
   },
   "keywords": [],
