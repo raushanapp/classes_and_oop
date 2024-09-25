@@ -163,7 +163,7 @@ const obj = {
 };
 obj.singAgain();
 //  exerice function test
-const a = function () {
+const g = function () {
   console.log("a", this);
   const b = function () {
     console.log("b", this);
@@ -176,7 +176,7 @@ const a = function () {
   };
   b();
 };
-a();
+g();
 
 const objTest = {
   name: "Raushan",
@@ -214,3 +214,26 @@ const objTest2 = {
 };
 
 objTest2.sing();
+
+//  exerices
+var b = {
+  name: "Jay",
+  say() {
+    console.log(this);
+  },
+};
+var c = {
+  name: "Jay",
+  say() {
+    return function () {
+      console.log(this);
+    };
+  },
+};
+var d = {
+  name: "Jay",
+  say() {
+    return () => console.log(this);
+  },
+};
+b.say();
