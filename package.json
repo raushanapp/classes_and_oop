@@ -5,7 +5,7 @@
   "main": "myFunction.ts",
   "scripts": {
     "build": "tsc",
-    "start": "node src/advance_js/object_function.js",
+    "start": "node src/advance_js/closures.js",
     "dev": "ts-node src/leran_node/http.example"
   },
   "keywords": [],
