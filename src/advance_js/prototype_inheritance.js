@@ -32,3 +32,23 @@ let socartes = Object.create(human);
 socartes.age = 29;
 console.log(human.isPrototypeOf(socartes));
 //  only functions have  the prototype property
+
+//  date object => to have  new method  .lastYear() which show your last years date
+
+Date.prototype.lastYear = function () {
+  console.log(this);
+  return this.getFullYear() - 1;
+};
+new Date("1998-10-10").lastYear();
+
+//  modify  .map() to print "🐸" at end of the each time
+
+Array.prototype.map = function () {
+  let arr = [];
+  for (let i = 0; i < this.length; i++) {
+    arr.push(this[i] + "🐸");
+  }
+  return arr;
+};
+
+console.log([1, 2, 34, 4, 5].map());
