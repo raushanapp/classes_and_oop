@@ -5,7 +5,7 @@
   "main": "myFunction.ts",
   "scripts": {
     "build": "tsc",
-    "start": "node src/advance_js/classes.js",
+    "start": "node src/advance_js/logic.js",
     "dev": "ts-node src/leran_node/http.example"
   },
   "keywords": [],

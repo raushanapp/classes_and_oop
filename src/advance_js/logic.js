@@ -31,3 +31,20 @@ function calculateByABottleAndRemaingAmount(
 
 var bottleAndEmty = new calculateByABottleAndRemaingAmount(8, 5);
 console.log(bottleAndEmty(13));
+
+//  Second
+// Function composition
+var f1 = (x) => x + 2;
+var f2 = (x) => x * x;
+var f3 = (x) => x / 2;
+
+var compose = (...fs) => {
+  // Write your logic here
+  return (value) => {
+    console.log(fs);
+    return fs.reduce((acc, fn) => fn(acc), value);
+  };
+};
+
+var result = compose(f1, f2, f3);
+console.log(result); // Should output 8
