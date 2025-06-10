@@ -113,3 +113,33 @@ let d = heyhey() // give me result like this heyhey
 // console.log(d);
 //  if directly call doodle then getting error reference error  doodle is not defined
 doodle()
+
+// Function Are Objects 
+//  three way of invok a function 
+//  first 
+function one() {
+    return 1;
+};
+//  second way;
+one();
+const obj = {
+    //  ES6 way 
+    twos() {
+        return 2
+    },
+    two: function () {
+        return 2;
+    }
+}
+obj.two()
+//  three 
+function three() {
+    return 3;
+};
+
+three.call();
+
+//  another way 
+const four = new Function("num", "return num");
+four(4);
+//  Function are first class citizens in JS
