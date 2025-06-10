@@ -143,3 +143,23 @@ three.call();
 const four = new Function("num", "return num");
 four(4);
 //  Function are first class citizens in JS
+// 1
+var stuff = function () { };
+// 2
+function a(fn) {
+    fn();
+};
+a(function () { console.log("Hi There") });
+//  3
+
+function b() {
+    return function c() { console.log("Bye!") };
+}
+b()();
+
+//  careful initialize function inside the loop
+function inittest(){}
+for (let i = 0; i < 5; i++){
+    // function inittest() { };  // insated of initial inside loop move to out side loop because every time loop runs first initalize then execute the function till i value is 5 then stop 
+    inittest()
+}
