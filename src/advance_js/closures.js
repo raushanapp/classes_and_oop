@@ -8,19 +8,19 @@ function a() {
       return `${grandpa}==${father}**${son}`;
     };
   };
-}
+};
+
 console.log(a()()());
-const boo = (string) => (name) => (name2) =>
-  console.log(`${string}> ${name} > ${name2}`);
+const boo = (string) => (name) => (name2) => console.log(`${string}> ${name} > ${name2}`);
 
 //  Exercise
 function callMeMaybe() {
   setTimeout(function () {
     console.log(callMe);
-  }, 3000);
+  }, 4000);
   const callMe = "Hi! I am now here!";
 }
-// callMeMaybe();
+callMeMaybe();
 
 // Memory Efficient
 function heavyDuty(index) {
@@ -43,9 +43,7 @@ function heavyDuty2() {
     return bigArray[index];
   };
 }
-
 //  Encapsulation
-
 function makeNuclearButton() {
   let timeWithoutDestruction = 0;
   const passTime = () => timeWithoutDestruction++;
@@ -107,3 +105,8 @@ for (var i = 0; i < array.length; i++) {
     }, 3000);
   })(i);
 }
+
+
+//  closures  and prototypes
+//  first leran closures ==> first class citizen and also have like function where the function called and also have lexical scope where javascripts run what variable each function have to aceess
+// 

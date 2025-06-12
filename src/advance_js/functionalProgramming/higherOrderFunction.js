@@ -71,3 +71,4 @@ const multiplyByFive = multiplyBy(5);
 multiplyByTwo(5);
 multiplyByFive(10)
 
+
