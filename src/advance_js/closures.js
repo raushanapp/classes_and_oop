@@ -53,13 +53,13 @@ function makeNuclearButton() {
     return "🔥";
   };
   setInterval(passTime, 1000);
-  //   return {
-  //     launch: launch,
-  //     totalPeaceTime: totalPeaceTime,
-  //   };
-  return {
-    totalPeaceTime: totalPeaceTime,
-  };
+    return {
+      launch: launch,
+      totalPeaceTime: totalPeaceTime,
+    };
+  // return {
+  //   totalPeaceTime: totalPeaceTime,
+  // };
 }
 
 let oohhno = makeNuclearButton();
@@ -90,6 +90,14 @@ const startOnce = initalize();
 
 //  first solution to print  I value 0 1 2 3 to use let insted of var
 let array = [1, 2, 3, 4];
+
+//  first exerice
+for (var i = 0; i < array.length; i++){
+  setTimeout(()=>{
+    console.log("I am at Index" + "" + i); // 4,4,4,4 because global scope
+  },300)
+}
+
 for (let i = 0; i < array.length; i++) {
   setTimeout(() => {
     console.log("I am at Index" + "" + i);
@@ -101,7 +109,7 @@ for (let i = 0; i < array.length; i++) {
 for (var i = 0; i < array.length; i++) {
   (function (closuerI) {
     setTimeout(() => {
-      console.log("I am at Index" + "C" + closuerI);
+      console.log("I am at Index" + "C" + array[closuerI]);
     }, 3000);
   })(i);
 }
