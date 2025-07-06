@@ -80,16 +80,37 @@ partialMultiplyBy(4, 10); // 200
 function addTo80(n){
     return n;
 }
-let cache = {};
-function memoizedAddTo80(n) {
-    if (n in cache) {
-        return cache[n];
-    } else {
-        console.log("Long time's")
-        cache[n] = n + 80;
-        return cache[n];
+function memoizedAddTo80() {
+    let cache = {};
+    return function (n) {
+        if (n in cache) {
+            return cache[n];
+        } else {
+            console.log("Long time's")
+            cache[n] = n + 80;
+            return cache[n];
+        };
     };
 };
-console.log(memoizedAddTo80(5));
-console.log(memoizedAddTo80(5));
+
+const memoized = memoizedAddTo80();
+console.log(memoized(5));
+console.log(memoized(6));
+
+//  Compose
+const compose = (f, g) => (data) => f(g(data)); // right to lfet
+const pipe = (f, g) => (data) => g(f(data)); // left to right
+const multiplyBy3 = (num) => num * 3;
+const makePositive = (num) => Math.abs(num);
+const multiplyByAndAbsolute = compose(multiplyBy3, makePositive);
+multiplyByAndAbsolute(-50); // 150
+const pipeMultiplyBy4 = pipe(multiply, makePositive);
+console.log(pipeMultiplyBy4(-60));
+//  Pipe
+
+//  f1(fn2(fn3(-50)));
+compose(f1, Float32Array, f3)(-50); // this compse do like this go right to left 
+pipe(f3, f2, f1)(-50); // left to right
+
+//  arity it simply means number of argument take function 
 
