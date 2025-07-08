@@ -6,7 +6,6 @@ const user = {
     cart: [],
     purchases: [],
 };
-
 //  Implement the cart features
 //  1. Add item to carts
 // 2. Add 3% tax to item in cart
@@ -92,11 +91,9 @@ function memoizedAddTo80() {
         };
     };
 };
-
 const memoized = memoizedAddTo80();
 console.log(memoized(5));
 console.log(memoized(6));
-
 //  Compose
 const compose = (f, g) => (data) => f(g(data)); // right to lfet
 const pipe = (f, g) => (data) => g(f(data)); // left to right
@@ -107,10 +104,7 @@ multiplyByAndAbsolute(-50); // 150
 const pipeMultiplyBy4 = pipe(multiply, makePositive);
 console.log(pipeMultiplyBy4(-60));
 //  Pipe
-
 //  f1(fn2(fn3(-50)));
 compose(f1, Float32Array, f3)(-50); // this compse do like this go right to left 
 pipe(f3, f2, f1)(-50); // left to right
-
 //  arity it simply means number of argument take function 
-
